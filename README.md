@@ -2,7 +2,8 @@
 
 ------
 
-Fscrawlers는 문서를 인덱싱하는 툴입니다. Apache Tika가 지원하는 종류의 문서는 모두 가능합니다.
+Fscrawlers는 문서를 인덱싱하는 툴입니다.
+ Apache Tika가 지원하는 종류의 문서는 모두 가능합니다.
 
 https://fscrawler.readthedocs.io/en/fscrawler-2.5/user/options.html
 
@@ -39,6 +40,7 @@ docker-compose up -d s-fscrawler
 ## Link
 
 _git : [*GIT*](https://github.com/MightyTedKim/elk-fscrawler_demo)
+
 _blog: 
 
 [**Fscrawler_101**](*https://blog.naver.com/deet1107/222150681083*) : fscrawler hello-world, log4j 설정
@@ -52,7 +54,7 @@ _blog:
 2. Fscrawler_nori : Dockerfile에 Nori-plugin을 넣어서 원클릭으로 실행
    1. DockerFile에 nori 플러그인 넣기
    2. 사전(사용자/동의어) 마운트하기
-   3. cobian님의 글을 참고했습니다. [cobain님의 블로그](https://cobain.me/2020/10/19/ElasticSearch-FSCrawler.html)
+   3. [cobain님의 블로그](https://cobain.me/2020/10/19/ElasticSearch-FSCrawler.html) 를 참고했습니다. 
 
 ------
 
