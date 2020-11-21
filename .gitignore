@@ -1,0 +1,16 @@
+
+# Fscrawler data directory
+data/es
+
+.DS_Store
+Fscrawler_101/logs/es/
+Fscrawler_101/logs/fscrawler/
+Fscrawler_101/logs/kibana/
+Fscrawler_101/service/fscrawler/config/tedkim/_status.json
+Fscrawler_nori/logs/es/
+Fscrawler_nori/logs/fscrawler/
+Fscrawler_nori/logs/kibana/
+Fscrawler_nori/service/fscrawler/config/_default/6/
+Fscrawler_nori/service/fscrawler/config/tedkim/_status.json
+Fscrawler_101/data/es/
+Fscrawler_nori/data/es/
