@@ -43,10 +43,10 @@ _git : [*GIT*](https://github.com/MightyTedKim/elk-fscrawler_demo)
 
 _blog: 
 
-- fscrawler hello-world, log4j 설정 : [**Fscrawler_101**](https://blog.naver.com/deet1107/222150681083) 
+- fscrawler hello-world, log4j 설정 : [*Fscrawler_101*](https://blog.naver.com/deet1107/222150681083) 
 
-- dockerfile에 nori 플러그인 설치, 사전 연계 : [**Fscrawler_nori**](*https://blog.naver.com/deet1107/222150727429*) 
-
+- dockerfile에 nori 플러그인 설치, 사전 연계 : [*Fscrawler_nori*](https://blog.naver.com/deet1107/222150727429) 
+ 
 
 
 2개의 docker-compose 파일로 구성
