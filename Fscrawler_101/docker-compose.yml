@@ -1,0 +1,52 @@
+version: '3.2'
+services:
+  # Elasticsearch
+  s-es:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:${ELK_VERSION}
+    container_name: c-es
+    environment:
+      - ES_JAVA_OPTS=-Xmx1024m -Xms256m
+    volumes:
+      - ./service/elk/es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./service/elk/es/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+      - ${GLOBAL_DATA_PATH}/es:/usr/share/elasticsearch/data
+      - ${GLOBAL_LOG_PATH}/es:/usr/share/elasticsearch/logs
+    ports:
+      - 9200:9200
+    networks:
+      - tedkim_network
+
+  # Kibana
+  s-kibana:
+    image: docker.elastic.co/kibana/kibana-oss:${ELK_VERSION}
+    container_name: c-kibana
+    volumes: 
+      - ./service/elk/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+      - ${GLOBAL_LOG_PATH}/kibana:/usr/share/kibana/logs
+    ports:
+      - "5601:5601"
+    depends_on:
+      - s-es
+    networks:
+      - tedkim_network
+
+  # FSCrawler 
+  s-fscrawler:
+    image: dadoonet/fscrawler:2.7-SNAPSHOT-es7-jpn
+    container_name: c-fscrawler
+    volumes:
+      - ./service/fscrawler/config:/root/.fscrawler
+      - ./service/fscrawler/data:/tmp/es
+      - ./service/fscrawler/log4j2.xml:/usr/share/fscrawler/config/log4j2.xml
+      - ${GLOBAL_LOG_PATH}/fscrawler:/usr/share/fscrawler/logs
+    #sending log4j location by FS_JAVA_OPTS
+    environment: 
+      - "FS_JAVA_OPTS=-Dlog4j.configurationFile=/usr/share/fscrawler/config/log4j2.xml"
+    command: fscrawler tedkim --trace
+    depends_on:
+      - s-es
+    networks: 
+      - tedkim_network
+
+networks:
+  tedkim_network:

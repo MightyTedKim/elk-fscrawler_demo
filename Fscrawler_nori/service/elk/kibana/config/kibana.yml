@@ -1,0 +1,6 @@
+---
+server.name: kibana
+server.host: 0.0.0.0
+elasticsearch.hosts: [ "http://s-es:9200" ]
+
+logging.dest: /usr/share/kibana/logs/kibana.log

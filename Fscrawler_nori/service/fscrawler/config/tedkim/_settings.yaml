@@ -1,0 +1,34 @@
+name: "tedkim"
+fs:
+  url: "/tmp/es"
+  update_rate: "1m"
+  # includes:
+  #   - "*/*.doc"
+  #   - "*/*.pdf"
+  #   - "*/*.doc"
+  #   - "*/*.pdf"
+  # excludes:
+  #   - "*/resume*"
+  json_support: false
+  filename_as_id: true
+  add_filesize: true
+  remove_deleted: true
+  add_as_inner_object: false
+  store_source: false
+  index_content: true
+  attributes_support: false
+  raw_metadata: true
+  xml_support: false
+  index_folders: true
+  lang_detect: false
+  continue_on_error: false
+  ocr:
+    enabled: false
+
+elasticsearch:
+  nodes:
+  - url: "http://s-es:9200"
+  # index: "docs"
+  bulk_size: 1000
+  flush_interval: "5s"
+  byte_size: "10mb"

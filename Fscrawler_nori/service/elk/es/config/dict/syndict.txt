@@ -1,0 +1,2 @@
+운송경로,Route,Transportation lane
+메타,meta,meta#,dataware meta
